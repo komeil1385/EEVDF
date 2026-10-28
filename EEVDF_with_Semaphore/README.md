@@ -60,7 +60,7 @@ Requires **Python 3.x** (uses standard library `threading` and `time` modules on
 
 ```bash
 # Clone the repository
-git clone [https://github.com/YourUsername/YourRepositoryName.git](https://github.com/YourUsername/YourRepositoryName.git)
+git clone https://github.com/komeil1385/EEVDF/tree/main/EEVDF_with_Semaphore
 
 # Navigate to the folder
 cd EEVDF_with_Semaphore
