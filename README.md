@@ -1,1 +1,1 @@
-# EEVDF
+# Earliest Eligible Virtual Deadline First (EEVDF)
