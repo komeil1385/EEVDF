@@ -63,7 +63,7 @@ Requires **Python 3.x** (uses standard library `threading` and `time` modules on
 git clone [https://github.com/YourUsername/YourRepositoryName.git](https://github.com/YourUsername/YourRepositoryName.git)
 
 # Navigate to the folder
-cd YourRepositoryName
+cd EEVDF_with_Semaphore
 
 # Run the simulation
 python eevdf_semaphore.py
