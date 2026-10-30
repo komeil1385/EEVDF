@@ -10,11 +10,11 @@ The following screenshots show the RM and EDF simulator during execution.
 <table>
   <tr>
     <td align="center">
-      <img src="edf.png" width="400"/><br/>
+      <img src="edf.jpg" width="400"/><br/>
       <b>Figure 1: Semaphore Mode</b>
     </td>
     <td align="center">
-      <img src="rm.png" width="400"/><br/>
+      <img src="rm.jpg" width="400"/><br/>
       <b>Figure 2: Monitor Mode</b>
     </td>
   </tr>
