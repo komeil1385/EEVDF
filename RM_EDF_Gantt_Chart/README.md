@@ -21,3 +21,8 @@ Below is the simulated execution timeline generated under heavy utilization work
 ```text
 | T1 | T1 | T2 | T2 | T2 |
 0    1    2    3    4    5
+
+### 2. Earliest Deadline First (EDF) Gantt Chart
+```text
+| T1 | T1 | T2 | T2 | T2 |
+0    1    2    3    4    5
