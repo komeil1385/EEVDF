@@ -3,6 +3,11 @@
 
 Welcome to the central repository for my Operating Systems course assignments. This repository focuses on the implementation, synchronization, and comparative analysis of the **EEVDF (Earliest Eligible Virtual Deadline First)** CPU scheduling algorithm—the modern proportional-share scheduler adopted in the Linux kernel (v6.6+).
 
+## 📺 Technical Talk: EEVDF in the Linux Kernel
+
+[![EEVDF is the new (sched_)normal](https://img.youtube.com/vi/5jIbEzTdTks/0.jpg)](https://youtu.be/5jIbEzTdTks)
+
+> **Conference Talk:** [Michal Koutný: EEVDF is the new (sched_)normal (SUSE Labs)](https://youtu.be/5jIbEzTdTks) — Explores the mathematical model of EEVDF, task lag, eligibility, virtual deadlines, and how it replaces CFS in the Linux kernel.
 ---
 
 ## 📂 Repository Structure & Assignments
