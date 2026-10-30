@@ -17,6 +17,7 @@ This repository is organized into dedicated directories for each assignment:
 | 📁 **[`EEVDF_with_Monitor`](./EEVDF_with_Monitor)** | Object-oriented implementation of EEVDF encapsulated inside a **Monitor** (`threading.Condition`) with comparison against Semaphores. | ✅ Completed |
 
 ---
+
 ## 📺 Technical Talk: EEVDF in the Linux Kernel
 
 [![EEVDF is the new (sched_)normal](https://img.youtube.com/vi/5jIbEzTdTks/0.jpg)](https://youtu.be/5jIbEzTdTks)
