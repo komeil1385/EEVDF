@@ -43,6 +43,13 @@ $$V_{deadline}(i) = vruntime_i + \frac{r_i}{w_i}$$
 * **Average Turnaround Time:** `7.33`
 * **Average Response Time:** `0.33`
 
+## Execution Preview
+
+The following screenshot shows the EEVDF simulator
+during execution.
+
+![EEVDF Simulator](result.png)
+
 ## 🚀 How to Run
 
 ```bash
