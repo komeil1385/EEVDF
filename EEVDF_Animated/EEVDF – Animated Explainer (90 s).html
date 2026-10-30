@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EEVDF – Earliest Eligible Virtual Deadline First</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--fg:#e6edf7;--mut:#8fa3bf;--ac:#4cc9f0;--ok:#4ade80;--no:#f87171;--am:#fbbf24;--card:#121c31;--ln:#24324d}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#050912;color:var(--fg);font-family:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
+#wrap{position:fixed;inset:0 0 56px 0;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:absolute;background:radial-gradient(1200px 700px at 50% 0%,#14213d,var(--bg));overflow:hidden;transform-origin:center}
+.el{position:absolute;opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease,background .5s,border-color .5s,box-shadow .5s}
+.el.on{opacity:1;transform:none}
+.h1{font-size:64px;font-weight:700;letter-spacing:-.5px}
+.t{font-size:34px;color:var(--mut);line-height:1.4}
+.card{background:var(--card);border:2px solid var(--ln);border-radius:20px}
+.mono{font-family:"JetBrains Mono",Consolas,Menlo,monospace}
+.tk{width:420px;height:110px;padding:18px 26px;font-size:38px;font-weight:600}
+.tk .b{position:absolute;left:26px;top:66px;font-size:22px;font-weight:500;transform:none;padding:0}
+.tk .d{right:22px;top:22px;font-size:26px;color:var(--am);background:#2a2412;border-radius:10px;padding:6px 14px;font-weight:600}
+.el.dim{border-color:#3a2530}.el.dim.on{opacity:.4}
+.tk.sel{border-color:var(--ok);box-shadow:0 0 40px #4ade8055}
+.el.on.go{transform:translateX(1230px)}
+.cpu{left:1340px;top:290px;width:480px;height:260px;border:3px dashed var(--ln);border-radius:24px;text-align:center;font-size:30px;color:var(--mut);padding-top:16px}
+.cpu.busy{border-color:var(--ok);color:var(--ok)}
+.st{top:840px;width:270px;height:84px;border-radius:42px;border:2px solid var(--ln);text-align:center;line-height:80px;font-size:26px;color:var(--mut);background:var(--card)}
+.st.act{border-color:var(--ac);color:var(--fg);background:#10304a}
+.cap{left:640px;top:330px;width:620px;font-size:36px;line-height:1.4}
+.cap b{color:var(--ac)}
+.mk{width:26px;height:26px;border-radius:50%;top:507px;margin-left:-13px}
+.ml{top:410px;width:320px;margin-left:-160px;text-align:center;font-size:30px;line-height:1.3}
+.ms{top:570px;width:320px;margin-left:-160px;text-align:center;font-size:26px}
+#ctl{position:fixed;left:0;right:0;bottom:0;height:56px;display:flex;gap:14px;align-items:center;padding:0 18px calc(0px + env(safe-area-inset-bottom,0px));background:#0a101c;border-top:1px solid var(--ln)}
+#ctl button{background:#16233b;color:var(--fg);border:1px solid var(--ln);border-radius:8px;padding:8px 14px;font-size:15px;cursor:pointer}
+#sc{flex:1}#tm{font:14px monospace;color:var(--mut);min-width:90px;text-align:right}
+</style></head><body>
+<div id="wrap"><div id="stage">
+
+<!-- Scene 1 -->
+<div class="el h1" data-s=".5" data-e="10" style="left:0;width:1920px;text-align:center;top:300px;font-size:170px;color:var(--ac)">EEVDF</div>
+<div class="el t" data-s="2" data-e="10" style="left:0;width:1920px;text-align:center;top:520px;color:var(--fg);font-size:52px">Earliest Eligible Virtual Deadline First</div>
+<div class="el t" data-s="4.5" data-e="10" style="left:360px;width:1200px;text-align:center;top:640px">A fair CPU scheduling algorithm in the Linux kernel’s fair scheduling class</div>
+
+<!-- Scene 2 -->
+<div class="el h1" data-s="10.3" data-e="25" style="left:120px;top:90px">Two core concepts</div>
+<div class="el card" data-s="11.5" data-e="25" style="left:120px;top:250px;width:810px;height:520px;padding:44px">
+ <div style="font-size:30px;color:var(--ok)">1 · ELIGIBILITY</div>
+ <div class="mono" style="font-size:54px;margin:28px 0">lag ≥ 0</div>
+ <div class="t" style="font-size:30px">lag = ideal fair share − CPU time actually received</div>
+ <div class="t" style="font-size:30px;margin-top:20px;color:var(--fg)">An eligible task has received no more than its fair share.</div></div>
+<div class="el card" data-s="16.5" data-e="25" style="left:990px;top:250px;width:810px;height:520px;padding:44px">
+ <div style="font-size:30px;color:var(--am)">2 · VIRTUAL DEADLINE</div>
+ <div class="mono" style="font-size:44px;margin:34px 0">vd = ve + slice / weight</div>
+ <div class="t" style="font-size:30px">Measured in <b style="color:var(--fg)">virtual time</b> — not wall-clock time, and not a real-time guarantee.</div>
+ <div class="t" style="font-size:30px;margin-top:20px;color:var(--fg)">Used to order the eligible tasks.</div></div>
+<div class="el t" data-s="21.5" data-e="25" style="left:120px;width:1680px;text-align:center;top:850px;color:var(--fg)">Eligibility decides <b style="color:var(--ok)">who may run</b>. Virtual deadline decides <b style="color:var(--am)">who runs first</b>.</div>
+
+<!-- Scene 3 -->
+<div class="el h1" data-s="25.3" data-e="50" style="left:120px;top:70px">Scheduling process</div>
+<div class="el t" data-s="25.3" data-e="50" style="left:140px;top:170px;font-size:28px">Ready queue</div>
+<div class="el card tk" data-s="25.5" data-e="50" style="left:140px;top:230px">Task A
+ <span class="el b" data-s="26" data-e="50" style="color:var(--ok)">Eligible · lag ≥ 0</span>
+ <span class="el d" data-s="35" data-e="50">vd 12</span></div>
+<div class="el card tk" data-s="25.7" data-e="50" data-cl="sel:40:50;go:45:999" style="left:140px;top:370px">Task B
+ <span class="el b" data-s="26.5" data-e="50" style="color:var(--ok)">Eligible · lag ≥ 0</span>
+ <span class="el d" data-s="35" data-e="50">vd 8</span></div>
+<div class="el card tk" data-s="25.9" data-e="50" data-cl="dim:30:50" style="left:140px;top:510px">Task C
+ <span class="el b" data-s="27" data-e="50" style="color:var(--no)">Ineligible · lag &lt; 0</span></div>
+<div class="el cpu" data-s="25.5" data-e="50" data-cl="busy:46:50">CPU</div>
+<div class="el cap" data-s="25.5" data-e="30"><b>1 · Examine</b> each task’s eligibility by checking its lag.</div>
+<div class="el cap" data-s="30" data-e="35"><b>2 · Exclude</b> ineligible tasks — C already received more than its fair share.</div>
+<div class="el cap" data-s="35" data-e="40"><b>3 · Compare</b> virtual deadlines of the eligible tasks only.</div>
+<div class="el cap" data-s="40" data-e="45"><b>4 · Select</b> the eligible task with the earliest virtual deadline: B.</div>
+<div class="el cap" data-s="45" data-e="50"><b>5 · Dispatch</b> Task B to the CPU.</div>
+<div class="el st" data-s="25.5" data-e="50" data-cl="act:25:30" style="left:160px">1 Examine</div>
+<div class="el st" data-s="25.5" data-e="50" data-cl="act:30:35" style="left:460px">2 Exclude</div>
+<div class="el st" data-s="25.5" data-e="50" data-cl="act:35:40" style="left:760px">3 Compare</div>
+<div class="el st" data-s="25.5" data-e="50" data-cl="act:40:45" style="left:1060px">4 Select</div>
+<div class="el st" data-s="25.5" data-e="50" data-cl="act:45:50" style="left:1360px">5 Dispatch</div>
+
+<!-- Scene 4 -->
+<div class="el h1" data-s="50.3" data-e="70" style="left:120px;top:90px">Example: virtual-time axis</div>
+<div class="el" data-s="50.5" data-e="70" style="left:200px;top:518px;width:1520px;height:4px;background:var(--ln)"></div>
+<div class="el t" data-s="50.5" data-e="70" style="left:200px;top:540px;font-size:24px;display:none">0</div>
+<div class="el t" data-s="50.5" data-e="70" style="left:1580px;top:545px;font-size:24px">virtual time →</div>
+<!-- A at 12 => x=1502 ; B at 8 => 1068 ; C at 5 => 742 -->
+<div class="el mk" data-s="51" data-e="70" style="left:1502px;background:var(--ok)"></div>
+<div class="el ml" data-s="51" data-e="70" style="left:1502px">Task A<br><span class="mono" style="color:var(--am)">vd = 12</span></div>
+<div class="el ms" data-s="51" data-e="70" style="left:1502px;color:var(--ok)">Eligible</div>
+<div class="el mk" data-s="53" data-e="70" data-cl="big:58:70" style="left:1068px;background:var(--ok)"></div>
+<div class="el ml" data-s="53" data-e="70" style="left:1068px">Task B<br><span class="mono" style="color:var(--am)">vd = 8</span></div>
+<div class="el ms" data-s="53" data-e="70" style="left:1068px;color:var(--ok)">Eligible</div>
+<div class="el mk" data-s="55" data-e="70" data-cl="dim:58:70" style="left:742px;background:var(--no)"></div>
+<div class="el ml" data-s="55" data-e="70" style="left:742px">Task C<br><span class="mono" style="color:var(--am)">vd = 5</span></div>
+<div class="el ms" data-s="55" data-e="70" style="left:742px;color:var(--no)">Ineligible ✗ skipped</div>
+<div class="el" data-s="58" data-e="70" style="left:1018px;top:482px;width:100px;height:76px;border:4px solid var(--ok);border-radius:18px;box-shadow:0 0 40px #4ade8066"></div>
+<div class="el h1" data-s="60" data-e="70" style="left:120px;width:1680px;text-align:center;top:700px;font-size:56px;color:var(--ok)">Selected: Task B</div>
+<div class="el t" data-s="62" data-e="70" style="left:220px;width:1480px;text-align:center;top:790px;font-size:32px">Earliest virtual deadline <b style="color:var(--fg)">among eligible tasks</b>. Task C’s smaller deadline is irrelevant — ineligible tasks are excluded first.</div>
+
+<!-- Scene 5 -->
+<div class="el h1" data-s="70.3" data-e="83" style="left:200px;top:140px">Summary</div>
+<div class="el card" data-s="71" data-e="83" style="left:200px;top:300px;width:1520px;height:130px;padding:36px 44px;font-size:38px"><span style="color:var(--ac)">Fairness</span> — EEVDF aims to distribute CPU time fairly.</div>
+<div class="el card" data-s="75" data-e="83" style="left:200px;top:470px;width:1520px;height:130px;padding:36px 44px;font-size:38px"><span style="color:var(--ok)">Eligibility</span> — determines which tasks can be selected.</div>
+<div class="el card" data-s="79" data-e="83" style="left:200px;top:640px;width:1520px;height:130px;padding:36px 44px;font-size:38px"><span style="color:var(--am)">Earliest virtual deadline</span> — picks which eligible task runs next.</div>
+<div class="el h1" data-s="84" data-e="999" style="left:0;width:1920px;text-align:center;top:440px;font-size:76px"><span style="color:var(--ac)">EEVDF</span> – Earliest Eligible Virtual Deadline First</div>
+
+</div></div>
+<div id="ctl"><button id="pp">Pause</button><button id="rs">Restart</button><input id="sc" type="range" min="0" max="90" step="0.1" value="0"><span id="tm">0:00 / 1:30</span></div>
+<script>
+(function(){
+var st=document.getElementById('stage'),els=[].slice.call(document.querySelectorAll('[data-s]')),
+sc=document.getElementById('sc'),tm=document.getElementById('tm'),pp=document.getElementById('pp'),
+t=0,play=true,last=null,D=90;
+function fit(){var k=Math.min(innerWidth/1920,(innerHeight-56)/1080);st.style.transform='scale('+k+')'}
+addEventListener('resize',fit);fit();
+function f(x){x=Math.floor(x);return Math.floor(x/60)+':'+('0'+x%60).slice(-2)}
+function render(){
+ els.forEach(function(e){
+  var s=+e.dataset.s,en=+(e.dataset.e||999);
+  e.classList.toggle('on',t>=s&&t<en);
+  (e.dataset.cl||'').split(';').forEach(function(x){if(!x)return;var p=x.split(':');e.classList.toggle(p[0],t>=+p[1]&&t<+(p[2]||999))});
+ });
+ sc.value=t;tm.textContent=f(t)+' / 1:30';
+}
+function loop(n){
+ if(last!==null&&play){t+=(n-last)/1000;if(t>=D){t=D;play=false;pp.textContent='Replay'}}
+ last=n;render();requestAnimationFrame(loop)
+}
+pp.onclick=function(){if(t>=D)t=0;play=!play;pp.textContent=play?'Pause':'Play'};
+document.getElementById('rs').onclick=function(){t=0;play=true;pp.textContent='Pause'};
+sc.oninput=function(){t=+sc.value;render()};
+requestAnimationFrame(loop);
+})();
+</script>
+</body></html>
