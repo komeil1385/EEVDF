@@ -11,10 +11,10 @@ This repository is organized into dedicated directories for each assignment:
 
 | Directory / Assignment | Description | Status |
 | :--- | :--- | :---: |
+| 📁 **[`EEVDF_Core_Algorithm`](./EEVDF_Core_Algorithm)** | Pure Python implementation of **EEVDF**, mathematical formulation (Lag & Virtual Deadline), and formal **Pseudocode**. | ✅ Completed |
 | 📁 **[`EEVDF_with_Semaphore`](./EEVDF_with_Semaphore)** | Implementation of the EEVDF scheduler integrated with POSIX-style **Semaphore** synchronization (`threading.Semaphore`). | ✅ Completed |
 | 📁 **[`EEVDF_vs_RM_EDF`](./EEVDF_vs_RM_EDF)** | Comparative simulation and benchmark of **EEVDF** against classic real-time algorithms (**Rate Monotonic** and **Earliest Deadline First**). | ✅ Completed |
 | 📁 **[`EEVDF_with_Monitor`](./EEVDF_with_Monitor)** | Object-oriented implementation of EEVDF encapsulated inside a **Monitor** (`threading.Condition`) with comparison against Semaphores. | ✅ Completed |
-| 📁 **[`EEVDF_Core_Algorithm`](./EEVDF_Core_Algorithm)** | Pure Python implementation of **EEVDF**, mathematical formulation (Lag & Virtual Deadline), and formal **Pseudocode**. | ✅ Completed |
 
 ---
 
