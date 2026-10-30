@@ -49,7 +49,7 @@ This directory contains a comparative simulation benchmarking **Rate Monotonic (
 The following screenshot shows the EEVDF simulator
 during execution.
 
-![EEVDF Simulator](result.png)
+![EEVDF Simulator](result.jpg)
 
 
 ## 🚀 How to Run
