@@ -4,6 +4,18 @@ This directory contains a Python-based simulation and visual text-based **Gantt 
 
 ---
 
-## 📌 Overview of the Exercises
+### 📌 Overview of the Exercises
+The following screenshots show the RM and EDF simulator during execution.
 
-
+<table>
+  <tr>
+    <td align="center">
+      <img src="edf.png" width="400"/><br/>
+      <b>Figure 1: Semaphore Mode</b>
+    </td>
+    <td align="center">
+      <img src="rm.png" width="400"/><br/>
+      <b>Figure 2: Monitor Mode</b>
+    </td>
+  </tr>
+</table>
