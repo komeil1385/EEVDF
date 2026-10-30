@@ -1,8 +1,6 @@
 # ⚙️ EEVDF (Earliest Eligible Virtual Deadline First) - Core Algorithm
 
-This directory contains the foundational explanation, mathematical formulation, pseudocode, and pure Python implementation of the **EEVDF** CPU scheduling algorithm.
-
----
+This directory contains the foundational explanation, mathematical formulation, and pure Python implementation of the **EEVDF** CPU scheduling algorithm.
 
 ## 📌 What is EEVDF?
 
@@ -24,45 +22,28 @@ $$V_{deadline}(i) = vruntime_i + \frac{r_i}{w_i}$$
 * **Heavy/Batch Tasks:** Request large time slices ($r_i$), resulting in further virtual deadlines.
 * **Interactive Tasks:** Request small time slices ($r_i$), receiving early virtual deadlines and immediate CPU execution.
 
----
+## 🔄 Step-by-Step Execution Flow
 
-## 📝 EEVDF Algorithm Pseudocode
+1. **System Virtual Time Calculation:** At each scheduling decision point, the scheduler calculates the weighted average of `vruntime` across all active tasks in the runqueue.
+2. **Eligibility Filtering:** Tasks with `vruntime` greater than the system average (negative lag) are temporarily filtered out because they have already consumed more than their fair share. Only tasks with `vruntime <= average` enter the eligible pool.
+3. **Deadline Arbitration:** Among the eligible tasks, the scheduler calculates $V_{deadline}$ based on each task's requested quantum ($r_i$) and weight ($w_i$), granting the CPU to the task with the minimum virtual deadline.
+4. **Virtual Runtime Update:** As the chosen task executes for $\Delta t$, its virtual runtime increases inversely proportional to its weight:
+   $$vruntime_{new} = vruntime_{old} + \frac{\Delta t}{w_i}$$
 
-```text
-ALGORITHM: EEVDF_Scheduler(Task_Queue)
--------------------------------------------------------------------------
-INPUT: A set of active tasks T = {T_1, T_2, ..., T_n}
-       Each task T_i has: weight (w_i), requested_slice (r_i), vruntime (v_i)
+## 📊 Sample Simulation Output
 
-WHILE Active_Tasks is not empty DO:
-    
-    // Step 1: Compute System Virtual Time (Weighted Average)
-    Total_Weight = SUM(w_i for all T_i in Active_Tasks)
-    Avg_VRuntime = SUM(v_i * w_i for all T_i in Active_Tasks) / Total_Weight
+| Task ID | Arrival | Burst | Weight | Slice ($r_i$) | Finish | Turnaround | Waiting | Response |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **T1 (Batch)** | 0 | 4 | 1 | 4 | 9 | 9 | 5 | 0 |
+| **T2 (Batch)** | 0 | 4 | 1 | 4 | 10 | 10 | 6 | 1 |
+| **T3 (Interactive)** | 1 | 2 | 2 | 1 | 4 | 3 | 1 | **0** |
 
-    // Step 2: Filter Eligible Tasks (Tasks with Lag >= 0)
-    Eligible_Set = EMPTY_LIST
-    FOR EACH task T_i in Active_Tasks DO:
-        IF T_i.vruntime <= Avg_VRuntime THEN:
-            ADD T_i to Eligible_Set
-        END IF
-    END FOR
+* **Execution Timeline:** `T1 -> T3 -> T2 -> T3 -> T1 -> T2 -> T1 -> T2 -> T1 -> T2`
+* **Average Waiting Time:** `4.00`
+* **Average Turnaround Time:** `7.33`
+* **Average Response Time:** `0.33`
 
-    // Step 3: Calculate Virtual Deadlines for Eligible Tasks
-    FOR EACH task T_i in Eligible_Set DO:
-        T_i.virtual_deadline = T_i.vruntime + (T_i.requested_slice / T_i.weight)
-    END FOR
+## 🚀 How to Run
 
-    // Step 4: Select Task with Earliest Virtual Deadline
-    Selected_Task = MIN_BY(Eligible_Set, key = virtual_deadline)
-
-    // Step 5: Execute Selected Task for Δt and Update Virtual Runtime
-    EXECUTE(Selected_Task, Δt)
-    Selected_Task.remaining_burst = Selected_Task.remaining_burst - Δt
-    Selected_Task.vruntime = Selected_Task.vruntime + (Δt / Selected_Task.weight)
-
-    IF Selected_Task.remaining_burst == 0 THEN:
-        REMOVE Selected_Task from Active_Tasks
-    END IF
-
-END WHILE
+```bash
+python eevdf.py
