@@ -44,6 +44,13 @@ Both synchronization models are tested against an identical workload: two heavy 
 * **Average Turnaround Time:** `7.67`
 * **Average Response Time:** `0.67`
 
+## Execution Preview
+
+The following screenshot shows the EEVDF simulator
+during execution.
+
+![EEVDF Simulator](result.png)
+
 ## 🚀 How to Run
 
 ```bash
