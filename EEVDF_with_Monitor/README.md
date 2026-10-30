@@ -62,6 +62,14 @@ The simulation runs three concurrent threads (`P1`, `P2` as heavy batch tasks wi
 
 ---
 
+## Execution Preview
+
+The following screenshot shows the EEVDF simulator
+during execution.
+
+![EEVDF Simulator](result.png)
+
+
 ## 🚀 How to Run
 
 Requires **Python 3.x** (no external packages needed).
