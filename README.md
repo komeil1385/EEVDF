@@ -13,10 +13,10 @@ This repository is organized into dedicated directories for each assignment:
 | :--- | :--- | :---: |
 | 📁 **[`EEVDF_Core_Algorithm`](./EEVDF_Core_Algorithm)** | Pure Python implementation of **EEVDF**, mathematical formulation (Lag & Virtual Deadline), and formal **Pseudocode**. | ✅ Completed |
 | 📁 **[`EEVDF_vs_RM_EDF`](./EEVDF_vs_RM_EDF)** | Comparative simulation and benchmark of **EEVDF** against classic real-time algorithms (**Rate Monotonic** and **Earliest Deadline First**). | ✅ Completed |
-| 📝 **[`RM_&_EDF_Gantt_Chart`](./RM_EDF_Gantt_Chart)** | Visual Gantt chart timeline simulation and comparison between Rate Monotonic (RM) and Earliest Deadline First (EDF). | ✅ Completed |
 | 📁 **[`EEVDF_with_Semaphore`](./EEVDF_with_Semaphore)** | Implementation of the EEVDF scheduler integrated with POSIX-style **Semaphore** synchronization (`threading.Semaphore`). | ✅ Completed |
 | 📁 **[`EEVDF_with_Monitor`](./EEVDF_with_Monitor)** | Object-oriented implementation of EEVDF encapsulated inside a **Monitor** (`threading.Condition`) with comparison against Semaphores. | ✅ Completed |
 | 📁 **[`EEVDF_Semaphore_and_Monitor`](./EEVDF_Semaphore_and_Monitor)** | Unified implementation and comparative documentation of EEVDF using both Semaphores and Monitors. | ✅ Completed |
+| 📝 **[`RM_&_EDF_Gantt_Chart`](./RM_EDF_Gantt_Chart)** | Visual Gantt chart timeline simulation and comparison between Rate Monotonic (RM) and Earliest Deadline First (EDF). | ✅ Completed |
 ---
 
 ## 📺 Technical Talk: EEVDF in the Linux Kernel
