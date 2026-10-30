@@ -54,6 +54,14 @@ When `P3 (Interactive)` arrives at `t = 1`, it immediately becomes eligible (`vr
 
 ---
 
+## Execution Preview
+
+The following screenshot shows the EEVDF simulator
+during execution.
+
+![EEVDF Simulator](result.png)
+
+
 ## 🚀 How to Run
 
 Requires **Python 3.x** (uses standard library `threading` and `time` modules only).
