@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EEVDF Scheduler Simulator</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>EEVDF Scheduler Simulator</h1>
+<p>Earliest Eligible Virtual Deadline First on one CPU. An educational model, not the Linux kernel.</p></header>
+<main>
+<section class="panel" id="config"><h2>Tasks</h2>
+<div class="row"><label>Scenario <select id="scenario"></select></label>
+<label>Slice q (ticks) <input id="slice" type="number" min="1" max="10" value="3"></label></div>
+<form id="addForm" class="row" autocomplete="off">
+<label>Arrival <input id="fArr" type="number" min="0" max="100" value="0"></label>
+<label>Weight <input id="fW" type="number" min="1" max="100" value="1"></label>
+<label>Service <input id="fReq" type="number" min="1" max="50" value="5"></label>
+<button type="submit">Add task</button></form>
+<p id="err" class="err" role="alert"></p>
+<table><thead><tr><th>Task</th><th>Arrival</th><th>Weight</th><th>Service</th><th></th></tr></thead><tbody id="taskRows"></tbody></table>
+</section>
+<section class="panel" id="controls"><div class="row">
+<button id="bStart">Start</button><button id="bPause">Pause</button><button id="bResume">Resume</button>
+<button id="bPrev">Previous</button><button id="bNext">Next step</button><button id="bRestart">Restart</button>
+<label>Speed <input id="speed" type="range" min="1" max="10" value="4"></label>
+<strong>t = <span id="clock">0</span></strong></div></section>
+<section class="panel" id="cpuPanel"><h2>CPU</h2><div id="cpu" class="cpu"></div><div id="cards" class="cards"></div></section>
+<section class="panel" id="decision"><h2>Scheduler decision</h2><div id="dec"></div></section>
+<section class="panel wide"><h2>Virtual time view</h2>
+<p class="hint">Each bar runs from a task's virtual runtime <i>v</i> to its virtual deadline <i>d</i>. The amber line is virtual time <i>V</i>. Bars starting right of it are ineligible.</p>
+<div id="vt" class="vt"></div></section>
+<section class="panel wide"><h2>Gantt chart</h2><div id="gantt" class="gantt"></div></section>
+<section class="panel wide"><h2>Statistics <small>(illustrative values for this model, not Linux kernel measurements)</small></h2>
+<div id="totals" class="totals"></div><table><thead><tr><th>Task</th><th>Executed</th><th>Waiting</th><th>Status</th></tr></thead><tbody id="stats"></tbody></table></section>
+<section class="panel wide" id="learn"><h2>How EEVDF works</h2>
+<details open><summary>What is EEVDF?</summary><p>A proportional-share scheduler. Each task gets CPU time in proportion to its weight, and latency is controlled by choosing the task whose virtual deadline is earliest among those that are owed CPU time.</p></details>
+<details><summary>Virtual runtime</summary><p><code>v += 1 / weight</code> for every tick executed. Heavy tasks age slowly, so they run more often.</p></details>
+<details><summary>Virtual time and lag; eligibility</summary><p><code>V = Σ(w·v) / Σw</code> over runnable tasks. <code>lag = w·(V − v)</code>. A task is <b>eligible</b> when lag ≥ 0, meaning it has not received more than its fair share. New tasks join with <code>v = V</code> (lag 0).</p></details>
+<details><summary>Virtual deadline</summary><p>When a task requests a slice of <code>q</code> ticks: <code>d = v + q / w</code>. After finishing a slice it requests a new one and d is recomputed.</p></details>
+<details><summary>Selecting the next task</summary><p>At each slice boundary: 1) compute V, 2) discard tasks with lag &lt; 0, 3) pick the smallest d among the rest (ties: lower task number). An ineligible task is skipped even if its deadline is earlier. That is what separates EEVDF from plain EDF.</p></details>
+<details><summary>Difference from CFS</summary><p>CFS always runs the task with the smallest vruntime and uses sleeper heuristics for latency. EEVDF uses lag for fairness and the deadline, derived from the requested slice, for latency.</p></details>
+<details><summary>This model vs. Linux</summary><p>Simplified: one CPU, integer ticks, fixed slice for all tasks, no wakeup preemption, no nice-to-weight table, no lag clamping or placement of sleeping tasks, no cgroups, no load balancing, no fixed-point arithmetic.</p></details>
+</section></main>
+<script src="script.js"></script></body></html>
