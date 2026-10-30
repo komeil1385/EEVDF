@@ -4,6 +4,6 @@ This directory contains a Python-based simulation and visual text-based **Gantt 
 
 ---
 
-## 📌 Overview of the Simulation
+## 📌 Overview of the Exercises
 
 
