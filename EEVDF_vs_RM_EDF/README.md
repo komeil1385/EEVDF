@@ -44,6 +44,14 @@ This directory contains a comparative simulation benchmarking **Rate Monotonic (
 
 ---
 
+## Execution Preview
+
+The following screenshot shows the EEVDF simulator
+during execution.
+
+![EEVDF Simulator](result.png)
+
+
 ## 🚀 How to Run
 
 ```bash
