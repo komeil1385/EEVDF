@@ -17,6 +17,8 @@ This repository is organized into dedicated directories for each assignment:
 | 📁 **[`EEVDF_with_Monitor`](./EEVDF_with_Monitor)** | Object-oriented implementation of EEVDF encapsulated inside a **Monitor** (`threading.Condition`) with comparison against Semaphores. | ✅ Completed |
 | 📁 **[`EEVDF_Semaphore_and_Monitor`](./EEVDF_Semaphore_and_Monitor)** | Unified implementation and comparative documentation of EEVDF using both Semaphores and Monitors. | ✅ Completed |
 | 📝 **[`RM_&_EDF_Gantt_Chart`](./RM_EDF_Gantt_Chart)** | Visual Gantt chart timeline simulation and comparison between Rate Monotonic (RM) and Earliest Deadline First (EDF). | ✅ Completed |
+| 🌐 **[`EEVDF_Animated (Live Demo)`](https://komeil1385.github.io/EEVDF/EEVDF_Animated/)** | Interactive web-based animation and visual execution simulation of the EEVDF scheduling algorithm. | ✅ Completed |
+
 | 📲 **[`EEVDF_Simulation`](https://komeil1385.github.io/EEVDF/EEVDF_Simulation/)** | Complete interactive simulation of the EEVDF scheduler showcasing queue management, eligibility filtering, and performance graphs. | ✅ Completed |
 ---
 
