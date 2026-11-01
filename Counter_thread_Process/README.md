@@ -2,4 +2,4 @@
 
 
 
-![Counter_thread_Process](screenshot.png)
+![Counter_thread_Process](Screenshot.png)
