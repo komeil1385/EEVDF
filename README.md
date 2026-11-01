@@ -22,15 +22,15 @@ This repository is organized into dedicated directories for each assignment:
 | 📲 **[`EEVDF_Simulation`](https://komeil1385.github.io/EEVDF/EEVDF_Simulation/)** | Complete interactive simulation of the EEVDF scheduler showcasing queue management, eligibility filtering, and performance graphs. | ✅ Completed |
 ---
 
-## 📄 Project Technical Reports (Persian & English)
+## Project Technical Reports (Persian & English)
 
 Complete scientific and technical documentation for the synchronization assignments is available in both **English** and **Persian**. You can either download the editable `.docx` files directly or use the **Live Preview** links to read them in your browser:
 
-| Assignment / Topic | 🇬🇧 English Report (`.docx`) | 🇮🇷 Persian Report (`.docx`) |
+| Assignment / Topic | English Report | Persian Report |
 | :--- | :---: | :---: |
-| **1. EEVDF with Semaphore** | [📥 Download](./EEVDF_with_Semaphore/document_english.docx) \| [👁️ Preview](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_with_Semaphore/EEVDF_Semaphore_EN.docx) | [📥 دانلود](./EEVDF_with_Semaphore/document_farsi.docx) \| [👁️ پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_with_Semaphore/EEVDF_Semaphore.docx) |
-| **2. EEVDF with Monitor** | [📥 Download](./EEVDF_with_Monitor/document_english.docx) \| [👁️ Preview](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_with_Monitor/EEVDF_Monitor_EN.docx) | [📥 دانلود](./EEVDF_with_Monitor/document_farsi.docx) \| [👁️ پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_with_Monitor/EEVDF_Monitor.docx) |
-| **3. EEVDF with Semaphore & Monitor** | [📥 Download](./EEVDF_Semaphore_and_Monitor/document_english.docx) \| [👁️ Preview](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_Semaphore_and_Monitor/document_farsi.docx) | [📥 دانلود](./EEVDF_Semaphore_and_Monitor/document_farsi.docx) \| [👁️ پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/komeil1385/EEVDF/main/EEVDF_Semaphore_and_Monitor/EEVDF_Semaphore_Monitor.docx) |
+| **1. EEVDF with Semaphore** | [Download](./EEVDF_with_Semaphore/document_english.docx) \| [Preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Semaphore%2Fdocument_english.docx) | [دانلود](./EEVDF_with_Semaphore/document_farsi.docx) \| [پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Semaphore%2Fdocument_farsi.docx) |
+| **2. EEVDF with Monitor** | [Download](./EEVDF_with_Monitor/document_english.docx) \| [Preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Monitor%2Fdocument_english.docx) | [دانلود](./EEVDF_with_Monitor/document_farsi.docx) \| [پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Monitor%2Fdocument_farsi.docx) |
+| **3. EEVDF with Semaphore & Monitor** | [Download](./EEVDF_Semaphore_and_Monitor/document_english.docx) \| [Preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_Semaphore_and_Monitor%2Fdocument_english.docx) | [دانلود](./EEVDF_Semaphore_and_Monitor/document_farsi.docx) \| [پیش‌نمایش](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_Semaphore_and_Monitor%2Fdocument_farsi.docx) |
 
 
 ## 📺 Technical Talk: EEVDF in the Linux Kernel
