@@ -69,6 +69,16 @@ during execution.
 
 ![EEVDF Simulator](result.png)
 
+## Technical Documentation & Reports
+
+* **English Version (document_english.docx):**  
+  [![Preview EN](https://img.shields.io/badge/Live_Preview-English_Report-blue?style=flat-square)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Monitor%2Fdocument_english.docx)
+  [![Download EN](https://img.shields.io/badge/Download-.docx-success?style=flat-square)](./document_english.docx)
+
+* **Persian Version (document_farsi.docx):**  
+  [![Preview FA](https://img.shields.io/badge/پیش‌نمایش_آنلاین-گزارش_فارسی-blue?style=flat-square)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_with_Monitor%2Fdocument_farsi.docx)
+  [![Download FA](https://img.shields.io/badge/دانلود_فایل-.docx-success?style=flat-square)](./document_farsi.docx)
+
 
 ## 🚀 How to Run
 
