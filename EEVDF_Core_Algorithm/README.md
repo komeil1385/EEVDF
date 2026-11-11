@@ -50,7 +50,8 @@ during execution.
 
 ![EEVDF Simulator](result.png)
 
-## 🚀 How to Run
+## Technical Documentation & Report
 
-```bash
-python eevdf.py
+* **English Version (document_english.pdf):**  
+  [![Preview PDF](https://img.shields.io/badge/Live_Preview-English_PDF-blue?style=flat-square)](./document_english.pdf)
+  [![Download PDF](https://img.shields.io/badge/Download-.pdf-success?style=flat-square)](./document_english.pdf?raw=true)
