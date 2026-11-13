@@ -2,9 +2,6 @@
 
 A full comparison of the **readers–writers problem** against four synchronization mechanisms: **Semaphore** (Dijkstra), **Monitor** (Brinch Hansen / Hoare), **Peterson's algorithm** (1981), and **Dekker's algorithm** (1965). Each mechanism is presented with its pseudocode, flowchart, step-by-step trace, and a worked example, and all five are compared in one table against the same properties.
 
-> **The key point most students get wrong:** readers–writers is a *problem*, not a mechanism. The semaphore and the monitor are two *vehicles* for solving it; Peterson and Dekker only build a two-process *lock* and on their own do **not** solve it — they give mutual exclusion only and lose simultaneous reading. This point is made explicit in every row of the table below.
->
-> This folder is Exercise 7 only — the complete version, **over 40 pages** in both languages. It does **not** repeat the full six-topic study — that is the comprehensive synchronization document (`Process_Synchronization_Comparison_EN/FA.docx`, 57 / 56 pages). Exercise 6 (the four-way Monitor / Semaphore / Dekker / Peterson comparison) is in the companion folder `Monitor_Semaphore_Dekker_Peterson`.
 
 ---
 
