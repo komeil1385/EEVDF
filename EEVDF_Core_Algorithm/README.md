@@ -50,8 +50,14 @@ during execution.
 
 ![EEVDF Simulator](result.png)
 
-## Technical Documentation & Report
+## 📑 Technical Documentation & Reports
 
-* **English Version (document_english.pdf):**  
-  [![Preview PDF](https://img.shields.io/badge/Live_Preview-English_PDF-blue?style=flat-square)](./document_english.pdf)
-  [![Download PDF](https://img.shields.io/badge/Download-.pdf-success?style=flat-square)](./document_english.pdf?raw=true)
+The complete theoretical and technical documentation for the core EEVDF algorithm is available in both English and Persian:
+
+* 🇬🇧 **English Version (`document_english.docx`):**  
+  [![Preview EN](https://img.shields.io/badge/Live_Preview-English_Report-blue?style=flat-square)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_Core_Algorithm%2Fdocument_english.docx)
+  [![Download EN](https://img.shields.io/badge/Download-.docx-success?style=flat-square)](./document_english.docx)
+
+* 🇮🇷 **Persian Version (`document_farsi.docx`):**  
+  [![Preview FA](https://img.shields.io/badge/پیش‌نمایش_آنلاین-گزارش_فارسی-blue?style=flat-square)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FEEVDF_Core_Algorithm%2Fdocument_farsi.docx)
+  [![Download FA](https://img.shields.io/badge/دانلود_فایل-.docx-success?style=flat-square)](./document_farsi.docx)
