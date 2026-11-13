@@ -1,8 +1,7 @@
-# Exercise 6 — Comparing the Monitor, Semaphore, Dekker, and Peterson Algorithms
+# Comparing the Monitor, Semaphore, Dekker, and Peterson Algorithms
 
 A focused comparison of four process-synchronization mechanisms: **Peterson's algorithm** (1981), **Dekker's algorithm** (1965), **Semaphore** (Dijkstra), and **Monitor** (Brinch Hansen / Hoare). Each mechanism is presented with its pseudocode, flowchart, step-by-step trace, and a worked example, and all four are compared in one table against the same properties.
 
-> This folder is Exercise 6 only. It does **not** cover Readers–Writers or Dining Philosophers — those are in the comprehensive synchronization study (`Process_Synchronization_Comparison_EN/FA.docx`, 57 / 56 pages).
 
 ---
 
