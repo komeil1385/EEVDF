@@ -51,9 +51,3 @@ git clone [https://github.com/komeil1385/EEVDF.git](https://github.com/komeil138
 
 # Navigate into the main directory
 cd EEVDF
-
-# Run the EEVDF + Semaphore simulation
-python EEVDF_with_Semaphore/eevdf_semaphore.py
-
-# Run the RM vs. EDF vs. EEVDF comparison benchmark
-python EEVDF_vs_RM_EDF/compare_schedulers.py
