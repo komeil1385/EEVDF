@@ -14,8 +14,6 @@ A full comparison of the **readers–writers problem** against four synchronizat
 
 Both documents contain the same content: the readers–writers problem definition and database state diagram, one chapter per mechanism (pseudocode, flowchart, trace), the three policies (reader priority, writer priority, fair), the comprehensive comparison table, executable code with real output, worked examples, six exercises with full solutions, practical applications, common errors, and appendices (C/POSIX implementation, quiz, submission checklist, complete fair-policy trace, one-page revision, study plan).
 
-> ⚠️ **File names:** the documents delivered for this exercise are named `Readers_Writers_Comparison_Exercise7_FULL_FA.docx` (41 pp.) and `Readers_Writers_Comparison_Exercise7_FULL_EN.docx` (43 pp.). Before uploading, rename them to `document_farsi.docx` and `document_english.docx` — the names used in the links above — exactly as was done for Exercise 6.
-
 ---
 
 ## 📊 Comparison Table
@@ -84,8 +82,6 @@ Under reader priority, a steady stream of new readers can starve the writer fore
 | `resault.png` | Screenshot of the demo running (code + terminal output) |
 | `README.md` | This file |
 
-> ⚠️ **Before uploading:** rename the delivered files to these names — `Readers_Writers_Comparison_Exercise7_FULL_EN.docx` → `document_english.docx`, `Readers_Writers_Comparison_Exercise7_FULL_FA.docx` → `document_farsi.docx`, `rw_ex7_demo.py` → `demo_code.py` — and add a screenshot of the demo running as `resault.png` (run `python3 demo_code.py`, screenshot the terminal, save it with exactly that name). Until `resault.png` is uploaded, the image below will not display.
-
 ---
 
 ## 🚀 Executable Code — `demo_code.py`
@@ -124,7 +120,6 @@ priority the writer can starve; under the fair policy it cannot.
 
 **Reading the result:** experiments A, B, and C all give the correct final value — so the final value alone does not distinguish the policies. Experiment D is the decisive one: with readers arriving every 10 ms and each reading for 20 ms, at least one reader is always active, so under reader priority the writer **never** starts in 200 ms, while under the fair policy it writes at t = 20 ms. Experiments E and F show that Peterson and Dekker give only mutual exclusion (final data = 5, one writer only) — no readers–writers policy at all.
 
-> ⚠️ Peterson and Dekker here are teaching demos, not production code. Their classical proofs assume atomic, sequentially-consistent reads/writes. CPython's GIL makes the plain assignments work reliably in practice here, but Python gives no memory-ordering guarantee like C11 `_Atomic`. In real programs, use `threading.Lock` / `threading.Semaphore` (as in experiments A–C).
 
 ---
 
