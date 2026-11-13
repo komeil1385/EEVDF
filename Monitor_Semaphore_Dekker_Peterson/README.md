@@ -9,8 +9,8 @@ A focused comparison of four process-synchronization mechanisms: **Peterson's al
 
 | Language | File | |
 |---|---|---|
-| 🇬🇧 English (18 pages) | `document_english.docx` | [📖 Live preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FMonitor_Semaphore_Dekker_Peterson%2Fdocument_english.docx) · [⬇️ Download](./document_english.docx) |
-| 🇮🇷 Persian / فارسی (17 pages, RTL) | `document_farsi.docx` | [📖 پیش‌نمایش آنلاین](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FMonitor_Semaphore_Dekker_Peterson%2Fdocument_farsi.docx) · [⬇️ دانلود](./document_farsi.docx) |
+| 🇬🇧 English  | `document_english.docx` | [📖 Live preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FMonitor_Semaphore_Dekker_Peterson%2Fdocument_english.docx) · [⬇️ Download](./document_english.docx) |
+| 🇮🇷 Persian / فارسی  | `document_farsi.docx` | [📖 پیش‌نمایش آنلاین](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FMonitor_Semaphore_Dekker_Peterson%2Fdocument_farsi.docx) · [⬇️ دانلود](./document_farsi.docx) |
 
 Both documents contain the same content: introduction, the race condition and the critical section, one chapter per mechanism (pseudocode, flowchart, trace), the comprehensive comparison table, executable code, sample exercises with solutions, conclusion, and references.
 
