@@ -9,8 +9,8 @@ A full comparison of the **readers–writers problem** against four synchronizat
 
 | Language | File | |
 |---|---|---|
-| 🇬🇧 English (43 pages) | `document_english.docx` | [📖 Live preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FReaders_Writers_Comparison%2Fdocument_english.docx) · [⬇️ Download](./document_english.docx) |
-| 🇮🇷 Persian / فارسی (41 pages, RTL) | `document_farsi.docx` | [📖 پیش‌نمایش آنلاین](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FReaders_Writers_Comparison%2Fdocument_farsi.docx) · [⬇️ دانلود](./document_farsi.docx) |
+| 🇬🇧 English  | `document_english.docx` | [📖 Live preview](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FReaders_Writers_Comparison%2Fdocument_english.docx) · [⬇️ Download](./document_english.docx) |
+| 🇮🇷 Persian / فارسی  | `document_farsi.docx` | [📖 پیش‌نمایش آنلاین](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fkomeil1385%2FEEVDF%2Fmain%2FReaders_Writers_Comparison%2Fdocument_farsi.docx) · [⬇️ دانلود](./document_farsi.docx) |
 
 Both documents contain the same content: the readers–writers problem definition and database state diagram, one chapter per mechanism (pseudocode, flowchart, trace), the three policies (reader priority, writer priority, fair), the comprehensive comparison table, executable code with real output, worked examples, six exercises with full solutions, practical applications, common errors, and appendices (C/POSIX implementation, quiz, submission checklist, complete fair-policy trace, one-page revision, study plan).
 
