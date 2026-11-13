@@ -1,4 +1,4 @@
-# Exercise 7 — Comparing Readers–Writers with Semaphore, Monitor, Dekker, and Peterson
+# Comparing Readers–Writers with Semaphore, Monitor, Dekker, and Peterson
 
 A full comparison of the **readers–writers problem** against four synchronization mechanisms: **Semaphore** (Dijkstra), **Monitor** (Brinch Hansen / Hoare), **Peterson's algorithm** (1981), and **Dekker's algorithm** (1965). Each mechanism is presented with its pseudocode, flowchart, step-by-step trace, and a worked example, and all five are compared in one table against the same properties.
 
